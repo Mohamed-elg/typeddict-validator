@@ -170,6 +170,7 @@ class DictMissingKeyException(Exception):
 
         """
         self.key = key
+        super().__init__(f"'{key}'")
 
 
 class DictValueTypeMismatchException(Exception):
@@ -208,3 +209,4 @@ class DictValueTypeMismatchException(Exception):
         if expected == Union:
             self.expected_type_name = "one of " + ", ".join([t.__class__.__name__ for t in expected.__args__])
         self.actual_type_name = actual.__name__ if actual.__class__.__name__ == "type" else actual.__class__.__name__
+        super().__init__(f"key: '{key}' requires type '{self.expected_type_name}' but got '{self.actual_type_name}'")

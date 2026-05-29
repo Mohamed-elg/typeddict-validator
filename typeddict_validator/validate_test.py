@@ -308,6 +308,7 @@ class TestValidateTypedDict(unittest.TestCase):
             (
                 "key: 'o_list' requires type 'NoneType' but got 'bool'",
                 "key: 'o_list' requires type 'GenericAlias' but got 'bool'",
+                "key: 'o_list' requires type 'list' but got 'bool'",
             ),
         ),
         (

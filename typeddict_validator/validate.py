@@ -159,7 +159,7 @@ class DictMissingKeyException(Exception):
 
         """
         self.key = key
-        super().__init__(f"'{key}'")
+        super().__init__(f"key: '{key}' is missing")
 
 
 class DictValueTypeMismatchException(Exception):
